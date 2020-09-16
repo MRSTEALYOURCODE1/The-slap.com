@@ -1,0 +1,61 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="comment">
+        <textarea  id="title" class="content-input" onkeyup="Allow()" placeholder="Your text here"></textarea>
+        <input class="right" type="submit" value="Post" onclick="insert()" style="width:40px;" /></form>
+        </div>
+        
+
+        <style>
+            .right{
+                color: blue;
+                -webkit-appearance: none;
+                border: 0;
+                background: #0088ff;
+                padding: .5rem 1rem;
+                border-radius: 3px;
+                color: #fff;
+                margin-top: 1rem;
+                float: right;
+                cursor: pointer;
+                right: 450;
+                position: absolute;
+                padding: 8px 40px;
+                text-align: left;
+                margin: 4px 2px;
+                font-size: 16px;
+            }
+        </style>
+       
+        <div id="display"></div>
+        <script type="text/javascript">
+        var titles = [];
+        var titleInput = document.getElementById("title");
+        var messageBox = document.getElementById("display");
+        function Allow()
+        {
+        if (!user.title.value.match(/[a-zA-Z]$/) && user.title.value !="")
+        {
+        user.title.value="";
+        alert("Please Enter only alphabets");
+        }
+        window.location.reload()
+        }
+        function insert () {
+        titles.push(titleInput.value);
+        clearAndShow();
+        }
+        function clearAndShow ()
+        {
+        titleInput.value = "";
+        messageBox.innerHTML = "";
+        messageBox.innerHTML += " " + titles.join("<br/> ") + "<br/>";
+        }
+        </script>
+</body>
+</html>

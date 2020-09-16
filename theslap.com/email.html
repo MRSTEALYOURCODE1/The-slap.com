@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Amitoj's Email page</title>
+</head>
+<body style="background: url(file:///Users/Amu/Desktop/Screen%20Shot%202020-07-30%20at%204.15.56%20PM.png);">
+<form>
+    <label for="pswd">Enter your Email: </label>
+    <input type="password" id="pswd">
+    <input type="button" value="Next" onclick="checkPswd();" />
+</form>
+<!--Function to check password the already set password is admin-->
+<script type="text/javascript">
+    function checkPswd() {
+        var confirmPassword = "hi";
+        var password = document.getElementById("pswd").value;
+        if (password == confirmPassword) {
+             window.location="password.html";
+        }
+        else{
+            alert("Sorry Incorrect Email.");
+        }
+    }
+</script>
+</body>
+</html>
